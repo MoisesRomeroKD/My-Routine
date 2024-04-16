@@ -31,7 +31,7 @@ usersRouter.post('/', async (request, response) => {
     const token = jwt.sign({ id: savedUser.id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1m' });
 
     let transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
+        host: "smtp.gmail.com",
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
@@ -44,7 +44,7 @@ usersRouter.post('/', async (request, response) => {
         from: process.env.EMAIL_USER, // sender address
         to: savedUser.email, // list of receivers
         subject: 'Verificacion de usuario', // Subject line
-        html: `<a target="_blank" href="${PAGE_URL}/verify/${savedUser.id}/${token}">Verificar Usuario</a>`,
+        html: `<a class="bg-indigo-500 hover:bg-indigo-300 p-1 rounded-lg" target="_blank" href="${PAGE_URL}/verify/${savedUser.id}/${token}">Verificar Usuario</a>`,
     });
 
     return response
