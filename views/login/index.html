@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesion</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav id="bar-nav">
+            <ul id="menu-bar">
+                <li class="items-menu">
+                    <a class="links-item" href="/">
+                        Home
+                    </a>
+                </li>
+                <li class="items-menu">
+                    <a id="btn-register" href="/register" class="links-item">
+                        Registrar
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="img-login">
+            <img src="/img/working_out.svg" alt="">
+        </div>
+        <div id="form-cont">
+            <form id="form">
+                <div class="split-form">
+                    <h1 id="title">Ingreso</h1>
+                </div>
+                <div id="email-cont" class="split-form">
+                    <div class="labels-cont">
+                        <label class="label-all" for="email-input">Correo:</label>
+                    </div>
+                    <div class="inputs-cont">
+                        <input id="email-input" class="inputs inputs-normal" autocomplete="on" type="email">
+                    </div>
+                </div>
+                <div id="pass-cont" class="split-form">
+                    <div class="labels-cont">
+                        <label class="label-all" for="password-input">Contraseña:</label>
+                    </div>
+                    <div class="inputs-cont">
+                        <input id="password-input" class="inputs inputs-normal" autocomplete="on" type="password">
+                    </div>
+                    <div id="text-contain" class="hide">
+                        <p id="error-text"></p>
+                    </div>
+                </div>
+                <div id="btn-cont" class="split-form">
+                    <button id="login-btn">Ingresar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script type="module" src="index.js"></script>
+    <script type="module" src="../components/notification.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

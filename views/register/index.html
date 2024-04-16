@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav id="bar-nav">
+            <ul id="menu-bar">
+                <li class="items-menu">
+                    <a class="links-item" href="/">
+                        Home
+                    </a>
+                </li>
+                <li class="items-menu">
+                    <a id="btn-login" class="links-item" href="/login">
+                        Ingresar
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="contain-bg">
+            <img src="/img/healthy_lifestyle.svg" alt="">
+        </div>
+        <div id="contain-form">
+            <form id="form">
+                <div id="container">
+                    <div id="title-container" class="split-container">
+                        <h1 id="title">Registro</h1>
+                    </div>
+                    <div class="split-container">
+                        <label class="label-all" for="name-input">
+                            Nombre y Apellido
+                        </label>
+                        <input id="name-input" class="input-all normal" autocomplete="on" type="text">
+                        <p class="hide p-s">
+                            El nombre y el apellido deben
+                            comenzar con mayúscula. Ej: Moisés Romero
+                        </p>
+                    </div>
+                    <div class="split-container">
+                        <label class="label-all" for="email-input">
+                            Correo
+                        </label>
+                        <input id="email-input" class="input-all normal" autocomplete="on" type="email">
+                        <p class="hide p-s">
+                            El correo es requerido.
+                        </p>
+                    </div>
+                    <div class="split-container">
+                        <label class="label-all" for="password-input">
+                            Contraseña
+                        </label>
+                        <input id="password-input" class="input-all normal" autocomplete="on" type="password">
+                        <p class="hide p-s">
+                            Debe tener: una letra mayus,
+                            un Num,
+                            no más de 8 caracteres.
+                        </p>
+                    </div>
+                    <div class="split-container">
+                        <label class="label-all" for="confirm-input">
+                            <ion-icon id="icon-check" name="checkmark-circle-outline"></ion-icon>
+                            Confirmar Contraseña
+                        </label>
+                        <input id="confirm-input" class="input-all normal" autocomplete="on" type="password">
+                        <p class="hide p-s">
+                            Las contraseñas deben coincidir.
+                        </p>
+                    </div>
+                    <div class="split-container">
+                        <button id="btn-signup">Registrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script type="module" src="index.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="../components/notification.js"></script>
+</body>
+
+</html>

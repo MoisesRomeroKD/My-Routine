@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutina-Lunes</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <nav id="menu">
+            <a id="hamburger"><ion-icon name="menu-outline"></ion-icon></a>
+            <ul id="menu-list" class="hide">
+                <li class="items-menu">
+                    <a href="/main" class="links-item">
+                        Home
+                    </a>
+                </li>
+                <li class="items-menu">
+                    <a id="training-btn" class="links-item">Training</a>
+                    <ul id="sub-menu-train" class="hide">
+                        <li class="sub-items-menu">
+                            <a href="/my-rutine-tuesday" class="sub-links-item">
+                                Martes Chest-Hamstrings
+                            </a>
+                        </li>
+                        <li class="sub-items-menu">
+                            <a href="/my-rutine-wednesday" class="sub-links-item">
+                                Miercoles Back-Glute
+                            </a>
+                        </li>
+                        <li class="sub-items-menu">
+                            <a href="/my-rutine-thursday" class="sub-links-item">
+                                Jueves Chest-Hamstring
+                            </a>
+                        </li>
+                        <li class="sub-items-menu">
+                            <a href="/my-rutine-friday" class="sub-links-item">
+                                Viernes Back-Quad
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 id="day">Lunes</h1>
+        <h1 id="workout-day">Dorsales-Cuadriceps</h1>
+        <div id="menu-machine">
+            <div class="item-machine">
+                <a id="btn-mach" class="btn-machine">
+                    Casa/Gym
+                </a>
+            </div>
+            <div class="item-machine">
+                <a id="btn-nomach" class="btn-machine">
+                    Parque
+                </a>
+            </div>
+        </div>
+        <h2 id="title-biserie">
+            Biserie #<span id="num-set"></span>
+        </h2>
+        <!--Routine to do in the gym-->
+        <div id="machine" class="hide">
+            <div id="mach-one" class="biserie-contain show">
+                <div class="biserie">
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Elevaciones de Tobillos</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/elevaciones-de-talon-maquina.png" alt="">
+                        </div>
+                    </div>
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Sit Up</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/sit-up-machine.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mach-two" class="biserie-contain hide">
+                <div class="biserie">
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Pull Down</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/pulldown.png" alt="">
+                        </div>
+                    </div>
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Sentadillas Sumo</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/sentadillas-sumo-barra.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mach-three" class="biserie-contain hide">
+                <div class="biserie">
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Dominadas Australianas</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/dominadas-australianas.png" alt="">
+                        </div>
+                    </div>
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Hip Thrust</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/hip-thrust-banca.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mach-four" class="biserie-contain hide">
+                <div class="biserie">
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Pull Down Neutras</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/pulldown-neutros.png" alt="">
+                        </div>
+                    </div>
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Sentadillas Bulgaras</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/sentadillas-bulgaras-gluteos.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="btn-back-mach" class="buttons-contain hide">
+                <button class="buttons">Atras</button>
+            </div>
+            <div id="btn-next-mach" class="buttons-contain show">
+                <button class="buttons">Siguiente</button>
+            </div>
+        </div>
+        <!--Routine to do in the park o in the house-->
+        <div id="no-machine" class="show">
+            <div id="nomach-one" class="biserie-contain show">
+                <div class="biserie">
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Elevaciones de talon</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/elevaciones-de-talon.png" alt="">
+                        </div>
+                    </div>
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Sit Up</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/sit-up.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="nomach-two" class="biserie-contain hide">
+                <div class="biserie">
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Dominadas</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/dominadas.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Sentadillas</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/sentadillas-sin-peso.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="nomach-three" class="biserie-contain hide">
+                <div class="biserie">
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Dominadas Australiano</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/dominadas-australianas.png" alt="">
+                        </div>
+                    </div>
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Zancadas Caminando</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/zancada-caminando.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="nomach-four" class="biserie-contain hide">
+                <div class="biserie">
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Dominadas Neutrales</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/dominadas-neutrales.png" alt="">
+                        </div>
+                    </div>
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Sentadillas Bulgaras (Gluteos)</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/sentadillas-bulgaras-gluteos.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="btn-back-nomach" class="buttons-contain hide">
+                <button class="buttons">Atras</button>
+            </div>
+            <div id="btn-next-nomach" class="buttons-contain show">
+                <button class="buttons">Siguiente</button>
+            </div>
+        </div>
+
+    </main>
+    <script src="index.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

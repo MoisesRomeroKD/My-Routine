@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutina-Jueves</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <nav id="menu">
+            <a id="hamburger"><ion-icon name="menu-outline"></ion-icon></a>
+            <ul id="menu-list" class="hide">
+                <li class="items-menu">
+                    <a class="links-item" href="/main">
+                        Home
+                    </a>
+                </li>
+                <li class="items-menu">
+                    <a id="training-btn" class="links-item">Training</a>
+                    <ul id="sub-menu-train" class="hide">
+                        <li class="sub-items-menu">
+                            <a href="/my-rutine-monday" class="sub-links-item">
+                                Lunes Back-Quad
+                            </a>
+                        </li>
+                        <li class="sub-items-menu">
+                            <a href="/my-rutine-tuesday" class="sub-links-item">
+                                Martes Chest-Hamstrings
+                            </a>
+                        </li>
+                        <li class="sub-items-menu">
+                            <a href="/my-rutine-wednesday" class="sub-links-item">
+                                Miercoles Back-Glute
+                            </a>
+                        </li>
+                        <li class="sub-items-menu">
+                            <a href="/my-rutine-friday" class="sub-links-item">
+                                Viernes Back-Quad
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 id="day">Jueves</h1>
+        <h1 id="workout-day">Pecho-Isquios</h1>
+        <div id="menu-machine">
+            <div class="item-machine">
+                <a id="btn-mach" class="btn-machine">
+                    Casa/Gym
+                </a>
+            </div>
+            <div class="item-machine">
+                <a id="btn-nomach" class="btn-machine">
+                    Parque
+                </a>
+            </div>
+        </div>
+        <h2 id="title-biserie">
+            Biserie #<span id="num-set"></span>
+        </h2>
+        <!--Routine to do in the gym-->
+        <div id="machine" class="hide">
+            <div id="mach-one" class="biserie-contain show">
+                <div class="biserie">
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Elevaciones Laterales</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/elevaciones-laterales.png" alt="">
+                        </div>
+                    </div>
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Elevaciones de Piernas</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/elevaciones-piernas-maquina.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mach-two" class="biserie-contain hide">
+                <div class="biserie">
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Press en Banca</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/bench-press.png" alt="">
+                        </div>
+                    </div>
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Peso Muerto Piernas Rigidas</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/peso-muerto-piernas-rigidas.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mach-three" class="biserie-contain hide">
+                <div class="biserie">
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Press en Banca Pesas</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/bench-press-dumbbell.png" alt="">
+                        </div>
+                    </div>
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Peso Muerto Rumano Una Pierna</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/peso-muerto-rumano-una-pierna-lvl-cero.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mach-four" class="biserie-contain hide">
+                <div class="biserie">
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Pull Over (Upper Chest)</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/pull-over-upper-chest.png" alt="">
+                        </div>
+                    </div>
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Press Frances</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/france-press.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="btn-back-mach" class="buttons-contain hide">
+                <button class="buttons">Atras</button>
+            </div>
+            <div id="btn-next-mach" class="buttons-contain show">
+                <button class="buttons">Siguiente</button>
+            </div>
+        </div>
+        <!--Routine to do in the park o in the house-->
+        <div id="no-machine" class="show">
+            <div id="nomach-one" class="biserie-contain show">
+                <div class="biserie">
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Elevaciones Laterales</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/elevaciones-laterales.png" alt="">
+                        </div>
+                    </div>
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Elevaciones de Piernas</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/elevaciones-piernas-piso.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="nomach-two" class="biserie-contain hide">
+                <div class="biserie">
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Flexiones Abiertas</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/flexiones-abiertas.png" alt="">
+                        </div>
+                    </div>
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Peso Muerto Piernas Rigidas</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/peso-muerto-piernas-rigidas.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="nomach-three" class="biserie-contain hide">
+                <div class="biserie">
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Flexiones Abiertas inclinadas</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/flexiones-abiertas-declinadas.png" alt="">
+                        </div>
+                    </div>
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Peso Muerto Rumano una Pierna</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/peso-muerto-rumano-una-pierna-lvl-cero.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="nomach-four" class="biserie-contain hide">
+                <div class="biserie">
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Pull Over (Upper Chest)</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/pull-over-upper-chest.png" alt="">
+                        </div>
+                    </div>
+                    <div class="split-biserie">
+                        <div class="split-title">
+                            <h3>Press Frances</h3>
+                        </div>
+                        <div class="split-img">
+                            <img src="/img/france-press.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="btn-back-nomach" class="buttons-contain hide">
+                <button class="buttons">Atras</button>
+            </div>
+            <div id="btn-next-nomach" class="buttons-contain show">
+                <button class="buttons">Siguiente</button>
+            </div>
+        </div>
+    </main>
+    <script src="index.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
