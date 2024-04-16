@@ -32,13 +32,15 @@ usersRouter.post('/', async (request, response) => {
 
     let transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
-        port: 465,
+        port: 587,
         secure: true, // true for 465, false for other ports
         auth: {
             user: process.env.EMAIL_USER, // generated ethereal user
             pass: process.env.EMAIL_PASS, // generated ethereal password
         },
     });
+
+    console.log(transporter);
 
     await transporter.sendMail({
         from: process.env.EMAIL_USER, // sender address
@@ -50,6 +52,7 @@ usersRouter.post('/', async (request, response) => {
     return response
         .status(201)
         .json(`Usuario creado. Revise su correo y verifique su Correo 
+            <a target="_blank" href="${PAGE_URL}/verify/${savedUser.id}/${token}">Verificar Usuario</a>
         ` );
     //<a target="_blank" href="https://mail.google.com/">Ir a correo</a>
 });
@@ -74,7 +77,7 @@ usersRouter.patch('/:id/:token', async (request, response) => {
 
         let transporter = nodemailer.createTransport({
             host: "smtp.gmail.com",
-            port: 465,
+            port: 587,
             secure: true, // true for 465, false for other ports
             auth: {
                 user: process.env.EMAIL_USER, // generated ethereal user
