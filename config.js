@@ -1,7 +1,7 @@
 
 const PAGE_URL =
   process.env.NODE_ENV === 'production'
-    ? 'placeholder'
+    ? 'https://my-routine-al0u.onrender.com'
     : 'http://localhost:3003';
 
 const MONGO_URI =
