@@ -44,15 +44,14 @@ usersRouter.post('/', async (request, response) => {
         from: process.env.EMAIL_USER, // sender address
         to: savedUser.email, // list of receivers
         subject: 'Verificacion de usuario', // Subject line
-        html: `<a class="bg-indigo-500 hover:bg-indigo-300 p-1 rounded-lg" target="_blank" href="${PAGE_URL}/verify/${savedUser.id}/${token}">Verificar Usuario</a>`,
+        html: `<a target="_blank" href="${PAGE_URL}/verify/${savedUser.id}/${token}">Verificar Usuario</a>`,
     });
 
     return response
         .status(201)
         .json(`Usuario creado. Revise su correo y verifique su Correo 
-            <a target="_blank" href="https://mail.google.com/">Ir a correo</a>
         ` );
-
+    //<a target="_blank" href="https://mail.google.com/">Ir a correo</a>
 });
 
 usersRouter.patch('/:id/:token', async (request, response) => {
