@@ -29,24 +29,24 @@ usersRouter.post('/', async (request, response) => {
     });
     const savedUser = await newUser.save();
     const token = jwt.sign({ id: savedUser.id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1m' });
-    /*
-        let transporter = nodemailer.createTransport({
-            host: 'smtp.gmail.com',
-            port: 465,
-            secure: true, // true for 465, false for other ports
-            auth: {
-                user: process.env.EMAIL_USER, // generated ethereal user
-                pass: process.env.EMAIL_PASS, // generated ethereal password
-            },
-        });
-    
-        await transporter.sendMail({
-            from: process.env.EMAIL_USER, // sender address
-            to: savedUser.email, // list of receivers
-            subject: 'Verificacion de usuario', // Subject line
-            html: `<a target="_blank" href="${PAGE_URL}/verify/${savedUser.id}/${token}">Verificar Usuario</a>`,
-        });
-    */
+
+    let transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true, // true for 465, false for other ports
+        auth: {
+            user: process.env.EMAIL_USER, // generated ethereal user
+            pass: process.env.EMAIL_PASS, // generated ethereal password
+        },
+    });
+
+    await transporter.sendMail({
+        from: process.env.EMAIL_USER, // sender address
+        to: savedUser.email, // list of receivers
+        subject: 'Verificacion de usuario', // Subject line
+        html: `<a target="_blank" href="${PAGE_URL}/verify/${savedUser.id}/${token}">Verificar Usuario</a>`,
+    });
+
     return response
         .status(201)
         .json(`Usuario creado. Revise su correo y verifique su Correo 
@@ -66,30 +66,30 @@ usersRouter.patch('/:id/:token', async (request, response) => {
     } catch (error) {
         //encontrar el email
         const id = request.params.id;
-        // const { email } = await User.findById(id);
+        const { email } = await User.findById(id);
 
         //firmar el nuevo token
         const token = jwt.sign({ id: id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1m' });
 
         //enviar el email
-        /*
-                let transporter = nodemailer.createTransport({
-                    host: "smtp.gmail.com",
-                    port: 465,
-                    secure: true, // true for 465, false for other ports
-                    auth: {
-                        user: process.env.EMAIL_USER, // generated ethereal user
-                        pass: process.env.EMAIL_PASS, // generated ethereal password
-                    },
-                });
-        
-                await transporter.sendMail({
-                    from: process.env.EMAIL_USER, // sender address
-                    to: email, // list of receivers
-                    subject: 'Verificacion de usuario', // Subject line
-                    html: `<a target="_blank" href="${PAGE_URL}/verify/${savedUser.id}/${token}">Verificar Usuario</a>`,
-                });
-        */
+
+        let transporter = nodemailer.createTransport({
+            host: "smtp.gmail.com",
+            port: 465,
+            secure: true, // true for 465, false for other ports
+            auth: {
+                user: process.env.EMAIL_USER, // generated ethereal user
+                pass: process.env.EMAIL_PASS, // generated ethereal password
+            },
+        });
+
+        await transporter.sendMail({
+            from: process.env.EMAIL_USER, // sender address
+            to: email, // list of receivers
+            subject: 'Verificacion de usuario', // Subject line
+            html: `<a target="_blank" href="${PAGE_URL}/verify/${savedUser.id}/${token}">Verificar Usuario</a>`,
+        });
+
         return response.status(400).json({
             error: 'El link ya expiro, verifique de nuevo su correo'
         });
