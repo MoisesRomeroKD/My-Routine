@@ -28,7 +28,7 @@ usersRouter.post('/', async (request, response) => {
         passwordHash
     });
     const savedUser = await newUser.save();
-    const token = jwt.sign({ id: savedUser.id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1m' });
+    const token = jwt.sign({ id: savedUser.id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1d' });
 
     let transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
@@ -101,7 +101,7 @@ usersRouter.patch('/:id/:token', async (request, response) => {
         const { email } = await User.findById(id);
 
         //firmar el nuevo token
-        const token = jwt.sign({ id: id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1m' });
+        const token = jwt.sign({ id: id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1d' });
 
         //enviar el email
 
