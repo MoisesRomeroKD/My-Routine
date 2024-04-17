@@ -83,7 +83,7 @@ usersRouter.post('/', async (request, response) => {
 
     return response
         .status(201)
-        .json('Usuario creado. Revise su correo y verifique su Correo.');
+        .json('Usuario creado. Revise su correo y verifique su Usuario.');
 
 });
 
