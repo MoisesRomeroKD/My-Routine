@@ -90,15 +90,6 @@ body {
         -o-border-radius: 25px;
     }
 
-    #sub-menu-train::-webkit-scrollbar {
-        width: 5px;
-    }
-
-    #sub-menu-train::-webkit-scrollbar-thumb {
-        background-color: #0000ff;
-        border-radius: 0.25rem;
-    }
-
     .items-menu {
         height: 50px;
         width: 80%;
@@ -148,6 +139,15 @@ body {
         overflow-y: scroll;
         padding-top: 7.5rem;
         padding-bottom: 3rem;
+    }
+
+    #sub-menu-train::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    #sub-menu-train::-webkit-scrollbar-thumb {
+        background-color: #0000ff;
+        border-radius: 0.25rem;
     }
 
     .sub-items-menu {

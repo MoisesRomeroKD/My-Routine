@@ -26,3 +26,115 @@ logOutLink.addEventListener("click", async function () {
 });
 
 /************************************************************* */
+const btnTraining = document.querySelector('#training-btn');
+const subMenuTraining = document.querySelector('#sub-menu-train');
+
+btnTraining.addEventListener('click', function menu() {
+    if (subMenuTraining.classList.contains('hide')) {
+        subMenuTraining.classList.add('show');
+        subMenuTraining.classList.remove('hide');
+    } else {
+        subMenuTraining.classList.remove('show');
+        subMenuTraining.classList.add('hide');
+    }
+});
+
+/************************************************ */
+const trainOne = document.querySelector('#train-one');
+const trainTwo = document.querySelector('#train-two');
+const trainThree = document.querySelector('#train-three');
+const trainFour = document.querySelector('#train-four');
+const trainFive = document.querySelector('#train-five');
+/*********** */
+const main = document.querySelector('main');
+/*********** */
+const monday = document.querySelector('#monday');
+const tuesday = document.querySelector('#tuesday');
+const wednesday = document.querySelector('#wednesday');
+const thursday = document.querySelector('#thursday');
+const friday = document.querySelector('#friday');
+
+trainOne.addEventListener('click', function () {
+    monday.classList.add('show');
+    monday.classList.remove('hide');
+    /**** */
+    tuesday.classList.add('hide');
+    tuesday.classList.remove('show');
+    /**** */
+    wednesday.classList.add('hide');
+    wednesday.classList.remove('show');
+    /**** */
+    thursday.classList.add('hide');
+    thursday.classList.remove('show');
+    /*** */
+    friday.classList.add('hide');
+    friday.classList.remove('show');
+});
+
+trainTwo.addEventListener('click', function () {
+    monday.classList.add('hide');
+    monday.classList.remove('show');
+    /**** */
+    tuesday.classList.add('show');
+    tuesday.classList.remove('hide');
+    /**** */
+    wednesday.classList.add('hide');
+    wednesday.classList.remove('show');
+    /**** */
+    thursday.classList.add('hide');
+    thursday.classList.remove('show');
+    /*** */
+    friday.classList.add('hide');
+    friday.classList.remove('show');
+});
+
+trainThree.addEventListener('click', function () {
+    monday.classList.add('hide');
+    monday.classList.remove('show');
+    /**** */
+    tuesday.classList.add('hide');
+    tuesday.classList.remove('show');
+    /**** */
+    wednesday.classList.add('show');
+    wednesday.classList.remove('hide');
+    /**** */
+    thursday.classList.add('hide');
+    thursday.classList.remove('show');
+    /*** */
+    friday.classList.add('hide');
+    friday.classList.remove('show');
+});
+
+trainFour.addEventListener('click', function () {
+    monday.classList.add('hide');
+    monday.classList.remove('show');
+    /**** */
+    tuesday.classList.add('hide');
+    tuesday.classList.remove('show');
+    /**** */
+    wednesday.classList.add('hide');
+    wednesday.classList.remove('show');
+    /**** */
+    thursday.classList.add('show');
+    thursday.classList.remove('hide');
+    /*** */
+    friday.classList.add('hide');
+    friday.classList.remove('show');
+});
+
+trainFive.addEventListener('click', function () {
+    monday.classList.add('hide');
+    monday.classList.remove('show');
+    /**** */
+    tuesday.classList.add('hide');
+    tuesday.classList.remove('show');
+    /**** */
+    wednesday.classList.add('hide');
+    wednesday.classList.remove('show');
+    /**** */
+    thursday.classList.add('hide');
+    thursday.classList.remove('show');
+    /*** */
+    friday.classList.add('show');
+    friday.classList.remove('hide');
+});

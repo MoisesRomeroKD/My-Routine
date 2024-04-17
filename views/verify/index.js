@@ -3,6 +3,7 @@ const right = document.querySelector('#right-veri');
 const wrong = document.querySelector('#wrong-veri');
 //p
 const wrongP = document.querySelector('#wrong');
+//
 
 (async () => {
     try {
