@@ -40,21 +40,54 @@ usersRouter.post('/', async (request, response) => {
         },
     });
 
-    console.log(transporter);
-
     await transporter.sendMail({
         from: process.env.EMAIL_USER, // sender address
         to: savedUser.email, // list of receivers
         subject: 'Verificacion de usuario', // Subject line
-        html: `<a target="_blank" href="${PAGE_URL}/verify/${savedUser.id}/${token}">Verificar Usuario</a>`,
+        html: `    <div style="height: 450px; width: 500px;
+        background-color: #0000ff; 
+        border-radius: 20px;
+        display: flex; align-items: center;
+        justify-content: center;">
+        <p style="height: 100%; width: 75%; 
+        color: #000; display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        font-weight: 600;
+        padding: 20px;">
+            Hola, ¡Bienvenido! a nuestra
+            pagina web para comenzar, por
+            favor verifica tu correo,
+            dando click en el siguiente
+            enlace, si no fuiste tu quien
+            se registro no hagas click
+            en el link y cambia tus datos.
+        </p>
+            <a target="_blank"
+        href="${PAGE_URL}/verify/${savedUser.id}/${token}" 
+        style="height: 100%;
+        width: 25%;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 20px;">
+            Verificar el correo
+            </a>
+        </div>
+        <a target="_blank" href="${PAGE_URL}/verify/${savedUser.id}/${token}">Verificar Usuario</a>`,
     });
 
     return response
         .status(201)
         .json(`Usuario creado. Revise su correo y verifique su Correo 
-            <a target="_blank" href="${PAGE_URL}/verify/${savedUser.id}/${token}">Verificar Usuario</a>
+                <a target="_blank" href="https://mail.google.com/">Ir a correo</a>
         ` );
-    //<a target="_blank" href="https://mail.google.com/">Ir a correo</a>
+
 });
 
 usersRouter.patch('/:id/:token', async (request, response) => {
