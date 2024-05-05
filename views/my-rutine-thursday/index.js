@@ -57,6 +57,8 @@ btnMenu.addEventListener('click', function menu() {
         subMenuTrain.classList.remove('show');
     }
 });
+
+/**********************/
 /** */
 btnMach.addEventListener('click', function () {
     /** */
@@ -72,31 +74,28 @@ btnMach.addEventListener('click', function () {
         /** */
         i = 1;
         numSet.innerHTML = i;
-        /** */
-        noMachTwo.classList.remove('show');
-        /** */
-        noMachOne.classList.remove('hide');
-        /** */
-        btnBackMach.classList.add('hide');
-        btnBackMach.classList.remove('show');
-        /** */
-        btnBackNoMach.classList.add('hide');
-        btnBackNoMach.classList.remove('show');
-        /** */
-        btnNextNoMach.classList.add('show');
-        btnNextNoMach.classList.remove('hide');
-        /** */
-        btnNextMach.classList.add('show');
-        btnNextMach.classList.remove('hide');
-        /** */
-        machOne.classList.add('show');
-        machOne.classList.remove('hide');
-        machTwo.classList.add('hide');
-        machTwo.classList.remove('show');
-        machThree.classList.add('hide');
-        machThree.classList.remove('show');
-        machFour.classList.add('hide');
-        machFour.classList.remove('show');
+        if (i === 1) {
+            /**numero de la biserie */
+            numSet.innerHTML = i;
+            /** */
+            btnBackMach.classList.add('hide');
+            btnBackMach.classList.remove('show');
+            /** */
+            btnNextMach.classList.add('show');
+            btnNextMach.classList.remove('hide');
+            /** */
+            machOne.classList.add('show');
+            /*** */
+            machTwo.classList.add('hide');
+            machThree.classList.add('hide');
+            machFour.classList.add('hide');
+            machFive.classList.add('hide');
+            /*** */
+            machTwo.classList.remove('show');
+            machThree.classList.remove('show');
+            machFour.classList.remove('show');
+            machFive.classList.remove('show');
+        }
     }
 });
 
@@ -114,33 +113,29 @@ btnNoMach.addEventListener('click', function () {
         /** */
         i = 1;
         numSet.innerHTML = i;
-        /** */
-        noMachTwo.classList.remove('show');
-        /** */
-        noMachOne.classList.remove('hide');
-        /** */
-        btnBackMach.classList.add('hide');
-        btnBackMach.classList.remove('show');
-        /** */
-        btnBackNoMach.classList.add('hide');
-        btnBackNoMach.classList.remove('show');
-        /** */
-        btnNextNoMach.classList.add('show');
-        btnNextNoMach.classList.remove('hide');
-        /** */
-        btnNextMach.classList.add('show');
-        btnNextMach.classList.remove('hide');
-        /** */
-        noMachOne.classList.add('show');
-        noMachOne.classList.remove('hide');
-        noMachTwo.classList.add('hide');
-        noMachTwo.classList.remove('show');
-        noMachThree.classList.add('hide');
-        noMachThree.classList.remove('show');
-        noMachFour.classList.add('hide');
-        noMachFour.classList.remove('show');
+        if (i === 1) {
+            /**numero de la biserie */
+            numSet.innerHTML = i;
+            /** */
+            btnBackNoMach.classList.add('hide');
+            btnBackNoMach.classList.remove('show');
+            /** */
+            btnNextNoMach.classList.add('show');
+            btnNextNoMach.classList.remove('hide');
+            /*** */
+            noMachOne.classList.add('show');
+            /*** */
+            noMachTwo.classList.add('hide');
+            noMachThree.classList.add('hide');
+            noMachFour.classList.add('hide');
+            noMachFive.classList.add('hide');
+            /*** */
+            noMachTwo.classList.remove('show');
+            noMachThree.classList.remove('show');
+            noMachFour.classList.remove('show');
+            noMachFive.classList.remove('show');
+        }
     }
-
 });
 /** */
 btnNextNoMach.addEventListener('click', function () {

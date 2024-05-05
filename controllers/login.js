@@ -25,6 +25,8 @@ loginRouter.post('/', async (request, response) => {
         id: userExit.id
     };
 
+    console.log(id);
+
     const accessToken = jwt.sign(userForToken, process.env.USER_TOKEN_SECRET, { expiresIn: '5d' });
     //milisegundo, segundo, minutos, horas, dias
     response.cookie('accessToken', accessToken, {
