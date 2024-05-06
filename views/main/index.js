@@ -39,6 +39,43 @@ btnTraining.addEventListener('click', function menu() {
     }
 });
 
+/************************************************* */
+const btnTrain = document.querySelector('#btn-train');
+const menuContain = document.querySelector('#menu-contain');
+const pageMenu = document.querySelector('#page-menu');
+const arrowUp = document.querySelector('#arrow-up');
+const arrowDown = document.querySelector('#arrow-down');
+
+btnTrain.addEventListener('click', function () {
+    if (menuContain.classList.contains('hide-menu')) {
+        /*** */
+        menuContain.classList.remove('hide-menu');
+        menuContain.classList.add('show-menu');
+        /*** */
+        pageMenu.classList.remove('hide');
+        pageMenu.classList.add('show');
+        /***************** */
+        arrowDown.classList.remove('show');
+        arrowDown.classList.add('hide');
+        /****** */
+        arrowUp.classList.remove('hide');
+        arrowUp.classList.add('show');
+    } else {
+        /*** */
+        menuContain.classList.remove('show-menu');
+        menuContain.classList.add('hide-menu');
+        /*** */
+        pageMenu.classList.remove('show');
+        pageMenu.classList.add('hide');
+        /************* */
+        arrowUp.classList.remove('show');
+        arrowUp.classList.add('hide');
+        /****** */
+        arrowDown.classList.remove('hide');
+        arrowDown.classList.add('show');
+    }
+})
+
 /************************************************ */
 const trainOne = document.querySelector('#train-one');
 const trainTwo = document.querySelector('#train-two');
