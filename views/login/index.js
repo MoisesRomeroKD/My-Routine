@@ -16,5 +16,6 @@ form.addEventListener('submit', async e => {
         window.location.pathname = `/main/`;
     } catch (error) {
         createNotification(true, error.response.data.error);
+        console.log(error);
     }
 });
