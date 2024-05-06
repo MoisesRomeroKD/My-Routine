@@ -29,58 +29,59 @@ usersRouter.post('/', async (request, response) => {
     });
     const savedUser = await newUser.save();
     const token = jwt.sign({ id: savedUser.id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1d' });
-
-    let transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
-        port: 465,
-        secure: true, // true for 465, false for other ports
-        auth: {
-            user: process.env.EMAIL_USER, // generated ethereal user
-            pass: process.env.EMAIL_PASS, // generated ethereal password
-        },
-    });
-
-    await transporter.sendMail({
-        from: process.env.EMAIL_USER, // sender address
-        to: savedUser.email, // list of receivers
-        subject: 'Verificacion de usuario', // Subject line
-        html: `    <div style="height: 450px; width: 500px;
-        background-color: #0000ff; 
-        border-radius: 20px;
-        display: flex; align-items: center;
-        justify-content: center;">
-        <p style="height: 100%; width: 75%; 
-        color: #000; display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.3rem;
-        font-weight: 600;
-        padding: 20px;">
-            Hola, ¡Bienvenido! a nuestra
-            pagina web para comenzar, por
-            favor verifica tu correo,
-            dando click en el siguiente
-            enlace, si no fuiste tu quien
-            se registro no hagas click
-            en el link y cambia tus datos.
-        </p>
-            <a target="_blank"
-        href="${PAGE_URL}/verify/${savedUser.id}/${token}" 
-        style="height: 100%;
-        width: 25%;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.3rem;
-        font-weight: 700;
-        text-decoration: none;
-        padding: 20px;">
-            Verificar el correo
-            </a>
-        </div>`
-    });
-
+    //
+    /*
+        let transporter = nodemailer.createTransport({
+            host: "smtp.gmail.com",
+            port: 465,
+            secure: true, // true for 465, false for other ports
+            auth: {
+                user: process.env.EMAIL_USER, // generated ethereal user
+                pass: process.env.EMAIL_PASS, // generated ethereal password
+            },
+        });
+    
+        await transporter.sendMail({
+            from: process.env.EMAIL_USER, // sender address
+            to: savedUser.email, // list of receivers
+            subject: 'Verificacion de usuario', // Subject line
+            html: `    <div style="height: 450px; width: 500px;
+            background-color: #0000ff; 
+            border-radius: 20px;
+            display: flex; align-items: center;
+            justify-content: center;">
+            <p style="height: 100%; width: 75%; 
+            color: #000; display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+            padding: 20px;">
+                Hola, ¡Bienvenido! a nuestra
+                pagina web para comenzar, por
+                favor verifica tu correo,
+                dando click en el siguiente
+                enlace, si no fuiste tu quien
+                se registro no hagas click
+                en el link y cambia tus datos.
+            </p>
+                <a target="_blank"
+            href="${PAGE_URL}/verify/${savedUser.id}/${token}" 
+            style="height: 100%;
+            width: 25%;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 20px;">
+                Verificar el correo
+                </a>
+            </div>`
+        });
+    */
     return response
         .status(201)
         .json('Usuario creado. Revise su correo y verifique su Usuario.');
@@ -104,58 +105,59 @@ usersRouter.patch('/:id/:token', async (request, response) => {
         const token = jwt.sign({ id: id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1d' });
 
         //enviar el email
-
-        let transporter = nodemailer.createTransport({
-            host: "smtp.gmail.com",
-            port: 465,
-            secure: true, // true for 465, false for other ports
-            auth: {
-                user: process.env.EMAIL_USER, // generated ethereal user
-                pass: process.env.EMAIL_PASS, // generated ethereal password
-            },
-        });
-
-        await transporter.sendMail({
-            from: process.env.EMAIL_USER, // sender address
-            to: email, // list of receivers
-            subject: 'Verificacion de usuario', // Subject line
-            html: `    <div style="height: 450px; width: 500px;
-        background-color: #0000ff; 
-        border-radius: 20px;
-        display: flex; align-items: center;
-        justify-content: center;">
-        <p style="height: 100%; width: 75%; 
-        color: #000; display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.3rem;
-        font-weight: 600;
-        padding: 20px;">
-            Hola, ¡Bienvenido! a nuestra
-            pagina web para comenzar, por
-            favor verifica tu correo,
-            dando click en el siguiente
-            enlace, si no fuiste tu quien
-            se registro no hagas click
-            en el link y cambia tus datos.
-        </p>
-            <a target="_blank"
-        href="${PAGE_URL}/verify/${savedUser.id}/${token}" 
-        style="height: 100%;
-        width: 25%;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.3rem;
-        font-weight: 700;
-        text-decoration: none;
-        padding: 20px;">
-            Verificar el correo
-            </a>
-        </div>
-        `
-        });
+        /*
+                let transporter = nodemailer.createTransport({
+                    host: "smtp.gmail.com",
+                    port: 465,
+                    secure: true, // true for 465, false for other ports
+                    auth: {
+                        user: process.env.EMAIL_USER, // generated ethereal user
+                        pass: process.env.EMAIL_PASS, // generated ethereal password
+                    },
+                });
+        
+                await transporter.sendMail({
+                    from: process.env.EMAIL_USER, // sender address
+                    to: email, // list of receivers
+                    subject: 'Verificacion de usuario', // Subject line
+                    html: `    <div style="height: 450px; width: 500px;
+                background-color: #0000ff; 
+                border-radius: 20px;
+                display: flex; align-items: center;
+                justify-content: center;">
+                <p style="height: 100%; width: 75%; 
+                color: #000; display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.3rem;
+                font-weight: 600;
+                padding: 20px;">
+                    Hola, ¡Bienvenido! a nuestra
+                    pagina web para comenzar, por
+                    favor verifica tu correo,
+                    dando click en el siguiente
+                    enlace, si no fuiste tu quien
+                    se registro no hagas click
+                    en el link y cambia tus datos.
+                </p>
+                    <a target="_blank"
+                href="${PAGE_URL}/verify/${savedUser.id}/${token}" 
+                style="height: 100%;
+                width: 25%;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.3rem;
+                font-weight: 700;
+                text-decoration: none;
+                padding: 20px;">
+                    Verificar el correo
+                    </a>
+                </div>
+                `
+                });
+                */
         return response.status(400).json({
             error: 'El link ya expiro, verifique de nuevo su correo'
         });
