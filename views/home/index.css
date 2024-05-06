@@ -48,7 +48,7 @@ body {
     display: none;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 750px) {
 
     /***********************************/
 
@@ -534,54 +534,9 @@ body {
         }
     }
 
-    #basic-exercise-carousel {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #title-contain-exerbasic {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        align-items: start;
-        justify-content: center;
-    }
-
-    #title-exerbasic {
-        font-size: 2rem;
-        padding-top: 5rem;
-    }
-
-    #exercise-carousel {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        z-index: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .basics-img-contain {
-        height: 60%;
-        width: 80%;
-    }
-
-    .basics-img-contain img {
-        height: 100%;
-        width: 100%;
-    }
-
-    footer {
-        height: 15rem;
-        width: 100%;
-        /*posicionamiento*/
-    }
 }
 
-@media (min-width: 650px) {
+@media (min-width: 750px) {
     header {
         height: 5rem;
         width: 95%;
@@ -846,49 +801,4 @@ body {
         width: 100%;
     }
 
-    #basic-exercise-carousel {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 3.5rem;
-    }
-
-    #title-contain-exerbasic {
-        height: 15%;
-        width: 95%;
-        position: absolute;
-        z-index: 2;
-        top: 10%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #title-exerbasic {
-        font-size: 3rem;
-        font-weight: 900;
-    }
-
-    #exercise-carousel {
-        height: 80%;
-        width: 80%;
-        position: absolute;
-        z-index: 1;
-        top: 15%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .basics-img-contain {
-        height: 60%;
-        width: 80%;
-    }
-
-    .basics-img-contain img {
-        height: 100%;
-        width: 100%;
-    }
 }
